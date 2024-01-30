@@ -1,4 +1,4 @@
-package com.workintech;
+package com.PasificCarCompany;
 
 import java.util.Objects;
 
@@ -11,9 +11,31 @@ public class Car {
     public Car(String name ,int cylinders) {
         this.name = name;
         this.cylinders=cylinders;
-        this.engine=true;
+        this.engine=Boolean.TRUE;
         this.wheels=4;
 
+    }
+
+    public String startEngine(){
+        printSimpleName();
+        return "The car's engine is strating";
+
+    }
+    public String  accelerate(){
+     printSimpleName();
+     return "The car's is accelerating.";
+    }
+    public String brake(){
+       printSimpleName();
+       return "The car is braking.";
+    }
+
+    private void logMessage(String message){
+        System.out.println(message);
+    }
+    //Bu şekilde tek seferde almak daha kulanışlı
+    private void printSimpleName(){
+        System.out.println("Class name:"+getClass().getSimpleName());
     }
 
     public String getName() {
@@ -22,17 +44,6 @@ public class Car {
 
     public int getCylinders() {
         return cylinders;
-    }
-
-    public void startEngine(){
-        System.out.println(getClass().getSimpleName()+":"+"The car's engine is strating");
-
-    }
-    public void accelerate(){
-        System.out.println(getClass().getSimpleName()+":"+"The car's is accelerating.");
-    }
-    public void brake(){
-        System.out.println(getClass().getSimpleName()+":"+"The car is braking.");
     }
 
 
